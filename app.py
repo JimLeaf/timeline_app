@@ -33,17 +33,21 @@ def get_image_base64(image_path):
 # Prepare inline HTML/CSS/JS with embedded images
 full_html = f"""
 <style>
-body {{
-  overflow-x: auto;
-  overflow-y: auto;
+* {{
+  box-sizing: border-box;
 }}
-html {{
-  overflow-x: auto;
+html, body {{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto !important;
+  overflow-y: auto !important;
 }}
 {css_content}
 </style>
 
-<div style="width: 100%; overflow-x: auto; overflow-y: visible;">
+<div style="width: 1400px; min-width: 1400px; overflow-x: auto; overflow-y: visible; margin: 0; padding: 0;">
 {body_html}
 </div>
 
@@ -52,8 +56,8 @@ html {{
 </script>
 """
 
-# Display using streamlit's html component
-st.components.v1.html(full_html, height=2000, scrolling=True)
+# Display using streamlit's html component with larger height to show scrollbar
+st.components.v1.html(full_html, height=3000, scrolling=True)
 
 # Add some padding at the bottom
 st.markdown("<br>" * 5, unsafe_allow_html=True)
