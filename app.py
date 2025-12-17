@@ -33,22 +33,22 @@ def get_image_base64(image_path):
 # Prepare inline HTML/CSS/JS with embedded images
 full_html = f"""
 <!DOCTYPE html>
-<html style="overflow-x: auto; overflow-y: auto;">
+<html style="overflow-x: hidden; overflow-y: hidden;">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 <style>
 body {{
-  overflow-x: auto;
-  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
   margin: 0;
   padding: 0;
 }}
-</style>
-</head>
-<body style="overflow-x: auto;">
-<style>
 {css_content}
 </style>
-
+</head>
+<body style="overflow-x: hidden; overflow-y: hidden;">
 {body_html}
 
 <script>
