@@ -64,6 +64,24 @@ html {{
   overflow-x: auto;
   overflow-y: auto;
 }}
+::-webkit-scrollbar {{
+  width: 12px;
+  height: 12px;
+}}
+::-webkit-scrollbar-track {{
+  background: transparent;
+}}
+::-webkit-scrollbar-thumb {{
+  background: rgba(136, 136, 136, 0.2);
+  border-radius: 6px;
+}}
+::-webkit-scrollbar-thumb:hover {{
+  background: rgba(136, 136, 136, 0.3);
+}}
+* {{
+  scrollbar-width: thin;
+  scrollbar-color: rgba(136, 136, 136, 0.2) transparent;
+}}
 {css_content}
 </style>
 </head>
