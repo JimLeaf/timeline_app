@@ -66,4 +66,4 @@ body {{
 st.components.v1.html(full_html, height=800, scrolling=True)
 
 # Add some padding at the bottom
-st.markdown("<br>" * 5, unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
