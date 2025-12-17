@@ -33,10 +33,19 @@ def get_image_base64(image_path):
 # Prepare inline HTML/CSS/JS with embedded images
 full_html = f"""
 <style>
+body {{
+  overflow-x: auto;
+  overflow-y: auto;
+}}
+html {{
+  overflow-x: auto;
+}}
 {css_content}
 </style>
 
+<div style="width: 100%; overflow-x: auto; overflow-y: visible;">
 {body_html}
+</div>
 
 <script>
 {js_content}
@@ -45,21 +54,6 @@ full_html = f"""
 
 # Display using streamlit's html component
 st.components.v1.html(full_html, height=2000, scrolling=True)
-
-# Add CSS to enable horizontal scrolling in Streamlit
-st.markdown("""
-    <style>
-        .main { 
-            overflow-x: auto;
-        }
-        [data-testid="stAppViewContainer"] {
-            overflow-x: auto;
-        }
-        [data-testid="stVerticalBlock"] {
-            overflow-x: auto;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
 # Add some padding at the bottom
 st.markdown("<br>" * 5, unsafe_allow_html=True)
