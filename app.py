@@ -72,15 +72,15 @@ html {{
   background: transparent;
 }}
 ::-webkit-scrollbar-thumb {{
-  background: rgba(136, 136, 136, 0.2);
+  background: rgba(136, 136, 136, 0.3);
   border-radius: 6px;
 }}
 ::-webkit-scrollbar-thumb:hover {{
-  background: rgba(136, 136, 136, 0.3);
+  background: rgba(136, 136, 136, 0.5);
 }}
 * {{
   scrollbar-width: thin;
-  scrollbar-color: rgba(136, 136, 136, 0.2) transparent;
+  scrollbar-color: rgba(136, 136, 136, 0.3) transparent;
 }}
 {css_content}
 </style>
