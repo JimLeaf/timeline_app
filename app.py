@@ -63,7 +63,7 @@ body {{
 """
 
 # Display using streamlit's html component
-st.components.v1.html(full_html, height=700, scrolling=True)
+st.components.v1.html(full_html, height=600, scrolling=True)
 
 # Add some padding at the bottom
 st.markdown("<br>" * 5, unsafe_allow_html=True)
