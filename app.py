@@ -5,6 +5,21 @@ from pathlib import Path
 # Set page config
 st.set_page_config(page_title="Site Timeline", layout="wide", initial_sidebar_state="collapsed")
 
+# Set background color
+st.markdown("""
+    <style>
+        .main {
+            background-color: #0e1117;
+        }
+        [data-testid="stAppViewContainer"] {
+            background-color: #0e1117;
+        }
+        [data-testid="stHeader"] {
+            background-color: #0e1117;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Read CSS file
 with open("style.css", "r") as f:
     css_content = f.read()
