@@ -57,12 +57,21 @@ full_html = f"""
 html {{
   overflow-x: auto;
   overflow-y: auto;
+  scrollbar-width: none;
+}}
+html::-webkit-scrollbar {{
+  display: none;
 }}
 body {{
   overflow-x: auto;
   overflow-y: auto;
   margin: 0;
   padding: 0;
+  background-color: #0e1117;
+  scrollbar-width: none;
+}}
+body::-webkit-scrollbar {{
+  display: none;
 }}
 {css_content}
 </style>
