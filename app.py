@@ -40,20 +40,14 @@ full_html = f"""
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 <style>
 html {{
-  scrollbar-width: none;
-}}
-html::-webkit-scrollbar {{
-  display: none;
+  overflow-x: auto;
+  overflow-y: auto;
 }}
 body {{
   overflow-x: auto;
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  scrollbar-width: none;
-}}
-body::-webkit-scrollbar {{
-  display: none;
 }}
 {css_content}
 </style>
@@ -69,7 +63,7 @@ body::-webkit-scrollbar {{
 """
 
 # Display using streamlit's html component
-st.components.v1.html(full_html, height=2000, scrolling=True)
+st.components.v1.html(full_html, height=1000, scrolling=True)
 
 # Add some padding at the bottom
 st.markdown("<br>" * 5, unsafe_allow_html=True)
