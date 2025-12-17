@@ -36,20 +36,6 @@ full_html = f"""
 <html style="overflow-x: auto; overflow-y: auto;">
 <head>
 <style>
-::-webkit-scrollbar {{
-  width: 12px;
-  height: 12px;
-}}
-::-webkit-scrollbar-track {{
-  background: #f1f1f1;
-}}
-::-webkit-scrollbar-thumb {{
-  background: #888;
-  border-radius: 6px;
-}}
-::-webkit-scrollbar-thumb:hover {{
-  background: #555;
-}}
 body {{
   overflow-x: auto;
   overflow-y: auto;
