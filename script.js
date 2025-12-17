@@ -1,4 +1,9 @@
 // =======================
+// GitHub Image Base URL
+// =======================
+const GITHUB_BASE_URL = "https://raw.githubusercontent.com/jimleaf/timeline_app/main/";
+
+// =======================
 // Event data
 // =======================
 const events = [
@@ -86,7 +91,7 @@ Fukukitaru Speed is a very strong high roll card but the key word is high roll, 
     side: "right",
     range: "FEB 03 - FEB 12",
     title: "S. Anshinzawa Friend & Tamamo Cross Guts",
-    description: `Anshinzawa is a <span style="color: red;">troll card</span>, no deck ever runs her. Tamamo Cross Guts is not a particularly significant card, no race bonus inside. Easy skip banner.<center><img src="icons/stat-card.png" style="max-width: 100%; height: auto;"></center>`,
+    description: `Anshinzawa is a <span style="color: red;">troll card</span>, no deck ever runs her. Tamamo Cross Guts is not a particularly significant card, no race bonus inside. Easy skip banner.<center><img src="${GITHUB_BASE_URL}icons/stat-card.png" style="max-width: 100%; height: auto;"></center>`,
     fills: ["fill-green"],
     image: "images/0203-right-1.png",
     iconsLeft: [],
@@ -465,8 +470,9 @@ function renderIcons(iconList = [], align) {
           const isImage =
             typeof icon === "string" &&
             (icon.endsWith(".png") || icon.endsWith(".jpg") || icon.endsWith(".jpeg") || icon.endsWith(".svg") || icon.startsWith("http"));
+          const iconSrc = isImage && !icon.startsWith("http") ? GITHUB_BASE_URL + icon : icon;
           return isImage
-            ? `<img src="${icon}" alt="icon" class="icon-img" />`
+            ? `<img src="${iconSrc}" alt="icon" class="icon-img" />`
             : `<span class="icon-emoji">${icon}</span>`;
         })
         .join("")}
@@ -481,7 +487,7 @@ function renderButtons(buttonList = [], align) {
       ${buttonList.map(label => {
         const upperLabel = label.toUpperCase();
         if (['MILE', 'MED', 'LONG', 'DIRT', 'SHORT'].includes(upperLabel)) {
-          return `<div class="button-box"><img src="icons/${upperLabel.toLowerCase()}.png" alt="${label}" class="button-icon" /></div>`;
+          return `<div class="button-box"><img src="${GITHUB_BASE_URL}icons/${upperLabel.toLowerCase()}.png" alt="${label}" class="button-icon" /></div>`;
         }
         return `<div class="button-box">${label}</div>`;
       }).join("")}
@@ -548,7 +554,7 @@ function renderTimeline(evts) {
         ${renderFill(ev.fills)}
         <div class="event-content">
           <div class="event-title">${ev.title || ""}</div>
-          ${ev.image ? `<img src="${ev.image}" alt="${ev.title || "event image"}" class="event-img" />` : ""}
+          ${ev.image ? `<img src="${GITHUB_BASE_URL}${ev.image}" alt="${ev.title || "event image"}" class="event-img" />` : ""}
           <p class="event-description">${ev.description || ""}</p>
           ${renderIcons(ev.iconsLeft || [], "left")}
           ${renderIcons(ev.iconsRight || [], "right")}
