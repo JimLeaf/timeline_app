@@ -32,14 +32,12 @@ def get_image_base64(image_path):
 
 # Prepare inline HTML/CSS/JS with embedded images
 full_html = f"""
+<!DOCTYPE html>
+<html style="overflow-x: auto; overflow-y: auto;">
+<head>
 <style>
-html {{
-  overflow-x: scroll;
-}}
-body {{
-  overflow-x: scroll;
-}}
 ::-webkit-scrollbar {{
+  width: 12px;
   height: 12px;
 }}
 ::-webkit-scrollbar-track {{
@@ -52,6 +50,16 @@ body {{
 ::-webkit-scrollbar-thumb:hover {{
   background: #555;
 }}
+body {{
+  overflow-x: auto;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}}
+</style>
+</head>
+<body style="overflow-x: auto;">
+<style>
 {css_content}
 </style>
 
@@ -60,6 +68,8 @@ body {{
 <script>
 {js_content}
 </script>
+</body>
+</html>
 """
 
 # Display using streamlit's html component
